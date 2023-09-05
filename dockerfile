@@ -1,4 +1,4 @@
-FROM python3
+FROM python
 RUN apt-get update -y && apt-get install -y curl python3 
 COPY . /root/
 WORKDIR /root/
