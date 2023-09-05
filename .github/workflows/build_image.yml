@@ -31,5 +31,6 @@ jobs:
       
             - name: Build and push the image
               run: |
-                docker build --platform linux/amd64 -t noticeboard:main dockerfile
+                pwd
+                docker build --platform linux/amd64 -t noticeboard:main .
                 docker push ${{secrets.DOCKER_USERNAME}}/noticeboard:latest
