@@ -36,6 +36,13 @@ class Events(Resource):
         max_team_size = data['max_team_size']
         event_assets = data['event_assets']
         event_club_id = data["club_id"]
+
+        # check if there is a registration link 
+        if "registration_link" in data:
+            registration_link = data["registration_link"]
+        else:
+            registration_link = None
+
         event_id = create_event_id()
 
         event = {
@@ -48,7 +55,8 @@ class Events(Resource):
             "max_team_size": max_team_size,
             "eventid": event_id,
             "event_assets": event_assets,
-            "event_club_id": event_club_id
+            "event_club_id": event_club_id,
+            "registration_link": registration_link,
         }
 
         add_event(event)
