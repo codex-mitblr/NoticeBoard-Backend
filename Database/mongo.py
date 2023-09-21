@@ -19,7 +19,7 @@ class Database:
     def insert(self, data):
         self.collection.insert_one(data)
 
-    def find(self, query):
+    def find(self, query = {}):
         return self.collection.find(query)
     
     def find_one(self, query):
